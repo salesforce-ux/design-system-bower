@@ -1,4 +1,3 @@
-/* Lightning Design System 0.9.2 */
 // Copyright (c) 2015, salesforce.com, inc. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -36,14 +35,14 @@ $color-background-alt-inverse: rgb(22, 50, 92) !default;
 $color-background-row-hover: rgb(244, 246, 249) !default;
 $color-background-row-active: rgb(238, 241, 246) !default;
 $color-background-row-selected: rgb(240, 248, 252) !default;
-$color-background-row-new: rgb(255, 255, 176) !default;
+$color-background-row-new: rgb(250, 255, 189) !default;
 $color-background-inverse: rgb(6, 28, 63) !default;
 $color-background-anchor: rgb(244, 246, 249) !default;
 $color-background-browser: rgb(84, 105, 141) !default;
 $color-background-chrome-mobile: rgb(0, 112, 210) !default;
 $color-background-chrome-desktop: rgb(255, 255, 255) !default;
 $color-background-customer: rgb(255, 154, 60) !default;
-$color-background-highlight: rgb(255, 255, 176) !default;
+$color-background-highlight: rgb(250, 255, 189) !default;
 $color-background-actionbar-icon-utility: rgb(84, 105, 141) !default;
 $color-background-indicator-dot: rgb(159, 170, 181) !default;
 $color-background-modal: rgb(255, 255, 255) !default;
@@ -294,14 +293,14 @@ $force-base-map: (
   "color-background-row-hover": (rgb(244, 246, 249)),
   "color-background-row-active": (rgb(238, 241, 246)),
   "color-background-row-selected": (rgb(240, 248, 252)),
-  "color-background-row-new": (rgb(255, 255, 176)),
+  "color-background-row-new": (rgb(250, 255, 189)),
   "color-background-inverse": (rgb(6, 28, 63)),
   "color-background-anchor": (rgb(244, 246, 249)),
   "color-background-browser": (rgb(84, 105, 141)),
   "color-background-chrome-mobile": (rgb(0, 112, 210)),
   "color-background-chrome-desktop": (rgb(255, 255, 255)),
   "color-background-customer": (rgb(255, 154, 60)),
-  "color-background-highlight": (rgb(255, 255, 176)),
+  "color-background-highlight": (rgb(250, 255, 189)),
   "color-background-actionbar-icon-utility": (rgb(84, 105, 141)),
   "color-background-indicator-dot": (rgb(159, 170, 181)),
   "color-background-modal": (rgb(255, 255, 255)),
@@ -849,6 +848,7 @@ $email-chatter: rgb(242, 207, 91) !default;
 $case-transcript: rgb(242, 207, 91) !default;
 $case-comment: rgb(242, 207, 91) !default;
 $case-change-status: rgb(242, 207, 91) !default;
+$client: rgb(0, 210, 190) !default;
 $contract: rgb(110, 192, 110) !default;
 $dashboard: rgb(239, 110, 100) !default;
 $case: rgb(242, 207, 91) !default;
@@ -864,7 +864,9 @@ $feedback: rgb(109, 161, 234) !default;
 $file: rgb(186, 172, 147) !default;
 $goals: rgb(86, 170, 223) !default;
 $groups: rgb(119, 158, 242) !default;
+$household: rgb(0, 175, 160) !default;
 $insights: rgb(236, 148, 237) !default;
+$investment-account: rgb(75, 192, 118) !default;
 $performance: rgb(248, 177, 86) !default;
 $link: rgb(122, 154, 230) !default;
 $metrics: rgb(86, 170, 223) !default;
@@ -1201,6 +1203,7 @@ $bg-standard-map: (
   "case-transcript": (rgb(242, 207, 91)),
   "case-comment": (rgb(242, 207, 91)),
   "case-change-status": (rgb(242, 207, 91)),
+  "client": (rgb(0, 210, 190)),
   "contract": (rgb(110, 192, 110)),
   "dashboard": (rgb(239, 110, 100)),
   "case": (rgb(242, 207, 91)),
@@ -1216,7 +1219,9 @@ $bg-standard-map: (
   "file": (rgb(186, 172, 147)),
   "goals": (rgb(86, 170, 223)),
   "groups": (rgb(119, 158, 242)),
+  "household": (rgb(0, 175, 160)),
   "insights": (rgb(236, 148, 237)),
+  "investment-account": (rgb(75, 192, 118)),
   "performance": (rgb(248, 177, 86)),
   "link": (rgb(122, 154, 230)),
   "metrics": (rgb(86, 170, 223)),

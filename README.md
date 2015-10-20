@@ -1,7 +1,5 @@
-# Lightning Design System
-# Version: 0.9.2
-# Salesforce Lightning Design System
-
+# Lightning Design System 
+# Version: 0.10.0 
 
 Welcome to the [Salesforce Lightning Design System](https://www.lightningdesignsystem.com) brought to you by [Salesforce UX](https://twitter.com/salesforceux).
 
