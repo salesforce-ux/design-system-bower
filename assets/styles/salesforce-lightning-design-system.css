@@ -437,7 +437,8 @@ img {
       z-index: 1; }
     .slds-button-group .slds-button:only-child {
       border-radius: .25rem; }
-  .slds-button-group + .slds-button-group {
+  .slds-button-group + .slds-button-group,
+  .slds-button-group + .slds-button {
     margin-left: 0.25rem; }
   .slds-button-group .slds-button--last { }
     .slds-button-group .slds-button--last .slds-button {
@@ -503,8 +504,7 @@ img {
   .slds-button[disabled] .slds-button__icon {
     fill: currentColor; }
   .slds-button + .slds-button,
-  .slds-button + .slds-button-group,
-  .slds-button-group + .slds-button {
+  .slds-button + .slds-button-group {
     margin-left: 0.25rem; }
 
 .slds-button-space-left {
@@ -829,11 +829,6 @@ a.slds-button--inverse:focus {
   line-height: 1.5;
   margin-right: 0.75rem;
   margin-bottom: 0.25rem; }
-  .slds-is-required > .slds-form-element__label:before {
-    content: '*';
-    color: #c23934;
-    position: absolute;
-    left: -0.5rem; }
   .slds-form-element__label:empty {
     margin: 0; }
 
@@ -841,8 +836,6 @@ a.slds-button--inverse:focus {
   font-size: 0.75rem;
   margin-top: 0.5rem;
   display: block; }
-  .slds-has-error .slds-form-element__help {
-    color: #c23934; }
 
 .slds-input {
   background-color: white;
@@ -876,14 +869,6 @@ a.slds-button--inverse:focus {
     .slds-input.slds-is-disabled:focus,
     .slds-input.slds-is-disabled:active {
       box-shadow: none; }
-  .slds-has-error .slds-input {
-    background-color: white;
-    border-color: #c23934;
-    box-shadow: #c23934 0 0 0 1px inset;
-    background-clip: padding-box; }
-    .slds-has-error .slds-input:focus,
-    .slds-has-error .slds-input:active {
-      box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
 
 .slds-input--small {
   line-height: 1.875rem;
@@ -906,10 +891,6 @@ a.slds-button--inverse:focus {
     color: #54698d;
     font-weight: 400;
     font-size: 0.875rem; }
-
-.slds-input--big {
-  padding: 0.5rem;
-  min-height: calc(2.125rem + 0.75rem + 2px); }
 
 .slds-input--bare {
   background-color: transparent;
@@ -969,14 +950,6 @@ a.slds-button--inverse:focus {
     .slds-textarea.slds-is-disabled:focus,
     .slds-textarea.slds-is-disabled:active {
       box-shadow: none; }
-  .slds-has-error .slds-textarea {
-    background-color: white;
-    border-color: #c23934;
-    box-shadow: #c23934 0 0 0 1px inset;
-    background-clip: padding-box; }
-    .slds-has-error .slds-textarea:focus,
-    .slds-has-error .slds-textarea:active {
-      box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
 
 .slds-radio {
   display: inline-block; }
@@ -1004,10 +977,10 @@ a.slds-button--inverse:focus {
     overflow: hidden;
     padding: 0;
     position: absolute; }
-    .slds-form-element .slds-radio [type="radio"] ~ .slds-radio--faux {
-      margin-right: 0.5rem; }
+    .slds-radio [type="radio"]:checked > .slds-radio--faux,
     .slds-radio [type="radio"]:checked ~ .slds-radio--faux {
       background: white; }
+      .slds-radio [type="radio"]:checked > .slds-radio--faux:after,
       .slds-radio [type="radio"]:checked ~ .slds-radio--faux:after {
         width: 0.5rem;
         height: 0.5rem;
@@ -1019,6 +992,7 @@ a.slds-button--inverse:focus {
                 transform: translate3d(-50%, -50%, 0);
         border-radius: 50%;
         background: #1589ee; }
+    .slds-radio [type="radio"]:focus > .slds-radio--faux,
     .slds-radio [type="radio"]:focus ~ .slds-radio--faux {
       border-color: #1589ee;
       box-shadow: 0 0 3px #0070D2; }
@@ -1031,21 +1005,33 @@ a.slds-button--inverse:focus {
       .slds-radio [type="radio"][disabled] ~ .slds-radio--faux {
         background-color: #e0e5ee;
         border-color: #a8b7c7; }
-    .slds-has-error .slds-radio [type="radio"] ~ .slds-radio--faux {
-      border-color: #c23934;
-      border-width: 2px; }
-    .slds-has-error .slds-radio [type="radio"]:checked ~ .slds-radio--faux {
-      background: white; }
-    .slds-has-error .slds-radio [type="radio"]:checked ~ .slds-radio--faux:after {
-      background: #d4504c; }
-    .slds-is-required > .slds-radio [type="radio"] ~ .slds-radio--faux:after {
-      content: '*';
-      color: #c23934;
-      position: absolute;
-      left: -0.5rem; }
+
+.slds-has-error .slds-radio [type="radio"] > .slds-radio--faux,
+.slds-has-error .slds-radio [type="radio"] ~ .slds-radio--faux {
+  border-color: #c23934;
+  border-width: 2px; }
+
+.slds-has-error .slds-radio [type="radio"]:checked > .slds-radio--faux,
+.slds-has-error .slds-radio [type="radio"]:checked ~ .slds-radio--faux {
+  background: white; }
+
+.slds-has-error .slds-radio [type="radio"]:checked > .slds-radio--faux:after,
+.slds-has-error .slds-radio [type="radio"]:checked ~ .slds-radio--faux:after {
+  background: #d4504c; }
+
+.slds-is-required > .slds-radio [type="radio"] > .slds-form-element__label:before,
+.slds-is-required > .slds-radio [type="radio"] ~ .slds-form-element__label:before {
+  content: '*';
+  color: #c23934;
+  position: absolute;
+  left: -0.5rem; }
 
 .slds-form-element__control .slds-radio {
   display: block; }
+
+.slds-form-element .slds-radio [type="radio"] > .slds-radio--faux,
+.slds-form-element .slds-radio [type="radio"] ~ .slds-radio--faux {
+  margin-right: 0.5rem; }
 
 .slds-checkbox {
   display: inline-block; }
@@ -1073,8 +1059,7 @@ a.slds-button--inverse:focus {
     overflow: hidden;
     padding: 0;
     position: absolute; }
-    .slds-form-element .slds-checkbox [type="checkbox"] ~ .slds-checkbox--faux {
-      margin-right: 0.5rem; }
+    .slds-checkbox [type="checkbox"]:checked > .slds-checkbox--faux:after,
     .slds-checkbox [type="checkbox"]:checked ~ .slds-checkbox--faux:after {
       display: block;
       content: '';
@@ -1087,31 +1072,47 @@ a.slds-button--inverse:focus {
               transform: translate3d(-50%, -50%, 0) rotate(-45deg);
       border-bottom: 2px solid #1589ee;
       border-left: 2px solid #1589ee; }
+    .slds-checkbox [type="checkbox"]:focus > .slds-checkbox--faux,
     .slds-checkbox [type="checkbox"]:focus ~ .slds-checkbox--faux {
       content: '';
       border-color: #1589ee;
       box-shadow: 0 0 3px #0070D2; }
+    .slds-checkbox [type="checkbox"]:focus:checked > .slds-checkbox--faux,
     .slds-checkbox [type="checkbox"]:focus:checked ~ .slds-checkbox--faux {
       border-color: #1589ee;
       background-color: white; }
+    .slds-checkbox [type="checkbox"][disabled] > .slds-checkbox--faux,
     .slds-checkbox [type="checkbox"][disabled] ~ .slds-checkbox--faux {
       background-color: #e0e5ee;
       border-color: #a8b7c7; }
+    .slds-checkbox [type="checkbox"][disabled] > .slds-checkbox--faux:after,
     .slds-checkbox [type="checkbox"][disabled] ~ .slds-checkbox--faux:after {
       border-color: white; }
-    .slds-has-error .slds-checkbox [type="checkbox"] ~ .slds-checkbox--faux {
-      border-color: #c23934;
-      border-width: 2px; }
-    .slds-has-error .slds-checkbox [type="checkbox"]:checked ~ .slds-checkbox--faux {
-      border-color: #c23934;
-      background-color: white; }
-    .slds-has-error .slds-checkbox [type="checkbox"]:checked ~ .slds-checkbox--faux:after {
-      border-color: #d4504c; }
-    .slds-is-required > .slds-checkbox [type="checkbox"] ~ .slds-checkbox--faux:after {
-      content: '*';
-      color: #c23934;
-      position: absolute;
-      left: -0.5rem; }
+
+.slds-has-error .slds-checkbox [type="checkbox"] > .slds-checkbox--faux,
+.slds-has-error .slds-checkbox [type="checkbox"] ~ .slds-checkbox--faux {
+  border-color: #c23934;
+  border-width: 2px; }
+
+.slds-has-error .slds-checkbox [type="checkbox"]:checked > .slds-checkbox--faux,
+.slds-has-error .slds-checkbox [type="checkbox"]:checked ~ .slds-checkbox--faux {
+  border-color: #c23934;
+  background-color: white; }
+
+.slds-has-error .slds-checkbox [type="checkbox"]:checked > .slds-checkbox--faux:after,
+.slds-has-error .slds-checkbox [type="checkbox"]:checked ~ .slds-checkbox--faux:after {
+  border-color: #d4504c; }
+
+.slds-is-required > .slds-checkbox [type="checkbox"] > .slds-form-element__label:before,
+.slds-is-required > .slds-checkbox [type="checkbox"] ~ .slds-form-element__label:before {
+  content: '*';
+  color: #c23934;
+  position: absolute;
+  left: -0.5rem; }
+
+.slds-form-element .slds-checkbox [type="checkbox"] > .slds-checkbox--faux,
+.slds-form-element .slds-checkbox [type="checkbox"] ~ .slds-checkbox--faux {
+  margin-right: 0.5rem; }
 
 .slds-select {
   background-color: white;
@@ -1142,14 +1143,6 @@ a.slds-button--inverse:focus {
     .slds-select.slds-is-disabled:focus,
     .slds-select.slds-is-disabled:active {
       box-shadow: none; }
-  .slds-has-error .slds-select {
-    background-color: white;
-    border-color: #c23934;
-    box-shadow: #c23934 0 0 0 1px inset;
-    background-clip: padding-box; }
-    .slds-has-error .slds-select:focus,
-    .slds-has-error .slds-select:active {
-      box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
   .slds-select[size] {
     min-height: 2.125rem;
     height: inherit; }
@@ -1196,6 +1189,9 @@ a.slds-button--inverse:focus {
   display: block; }
   .slds-form--stacked .slds-form-element + .slds-form-element {
     margin-top: 0.5rem; }
+  .slds-form--stacked .slds-form-element .slds-checkbox,
+  .slds-form--stacked .slds-form-element .slds-radio {
+    display: block; }
 
 @media (max-width: 29.9375em) {
   .slds-form--inline .slds-form-element {
@@ -1239,6 +1235,42 @@ a.slds-button--inverse:focus {
   display: inline-block;
   line-height: 2.125rem;
   min-height: calc(2.125rem + 2px); }
+
+.slds-is-required > .slds-form-element__label:before {
+  content: '*';
+  color: #c23934;
+  position: absolute;
+  left: -0.5rem; }
+
+.slds-has-error .slds-input {
+  background-color: white;
+  border-color: #c23934;
+  box-shadow: #c23934 0 0 0 1px inset;
+  background-clip: padding-box; }
+  .slds-has-error .slds-input:focus,
+  .slds-has-error .slds-input:active {
+    box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
+
+.slds-has-error .slds-textarea {
+  background-color: white;
+  border-color: #c23934;
+  box-shadow: #c23934 0 0 0 1px inset;
+  background-clip: padding-box; }
+  .slds-has-error .slds-textarea:focus,
+  .slds-has-error .slds-textarea:active {
+    box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
+
+.slds-has-error .slds-select {
+  background-color: white;
+  border-color: #c23934;
+  box-shadow: #c23934 0 0 0 1px inset;
+  background-clip: padding-box; }
+  .slds-has-error .slds-select:focus,
+  .slds-has-error .slds-select:active {
+    box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
+
+.slds-has-error .slds-form-element__help {
+  color: #c23934; }
 
 .slds-grid {
   display: -webkit-box;
@@ -1755,6 +1787,11 @@ a.slds-button--inverse:focus {
     width: 15rem;
     max-height: calc((((0.875rem * 1.5) + 1rem) * 5) + 0.5rem + 2px);
     overflow-y: auto; }
+  .slds-picklist--fluid .slds-picklist__label,
+  .slds-picklist--fluid .slds-dropdown {
+    width: auto;
+    min-width: 0;
+    max-width: 15rem; }
 
 .slds-picklist__label {
   padding-right: 2rem;
@@ -1984,7 +2021,8 @@ a.slds-button--inverse:focus {
     color: #54698d; }
   .slds-datepicker td {
     padding: 0.25rem;
-    text-align: center; }
+    text-align: center;
+    font-size: 0.75rem; }
     .slds-datepicker td > .slds-day {
       width: 2rem;
       height: 2rem;
@@ -2043,10 +2081,6 @@ a.slds-button--inverse:focus {
     padding: 0.25rem; }
   .slds-datepicker__filter--month {
     padding: 0 0.25rem 0 0; }
-  .slds-datepicker .slds-picklist__label {
-    min-width: 0;
-    font-size: 0.75rem;
-    font-weight: 400; }
 
 .slds-disabled-text {
   color: #d8dde6; }
@@ -2766,14 +2800,6 @@ a.slds-button--inverse:focus {
     .slds-lookup[data-scope="multi"] .slds-form-element__control.slds-is-disabled:focus,
     .slds-lookup[data-scope="multi"] .slds-form-element__control.slds-is-disabled:active {
       box-shadow: none; }
-  .slds-has-error .slds-lookup[data-scope="multi"] .slds-form-element__control {
-    background-color: white;
-    border-color: #c23934;
-    box-shadow: #c23934 0 0 0 1px inset;
-    background-clip: padding-box; }
-    .slds-has-error .slds-lookup[data-scope="multi"] .slds-form-element__control:focus,
-    .slds-has-error .slds-lookup[data-scope="multi"] .slds-form-element__control:active {
-      box-shadow: #c23934 0 0 0 1px inset, 0 0 3px #0070D2; }
   .slds-lookup[data-scope="multi"] .slds-form-element__control .slds-input--bare {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
