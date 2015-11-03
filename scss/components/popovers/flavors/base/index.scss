@@ -9,16 +9,12 @@
 
 
 
-@include popover('.#{$css-prefix}popover', $shadow-drop-down);
-
 .#{$css-prefix}popover {
+  @include popover($shadow: $shadow-drop-down);
   border: $border-width-thin solid $color-border;
 
-  &__header {
-    padding: $spacing-medium $spacing-medium $spacing-xx-small;
-  }
-
   &__body {
-    padding: $spacing-small $spacing-medium;
+    position: relative;
+    padding: $spacing-x-small $spacing-small;
   }
 }
