@@ -9,14 +9,24 @@
 
 
 
-.#{$css-prefix}media--reverse {
-
-  > .#{$css-prefix}media__figure {
-    order: 1;
-    margin: 0 0 0 $spacing-small;
-  }
+.#{$css-prefix}media__figure--reverse {
+  margin: 0 0 0 $spacing-small;
 }
 
-.#{$css-prefix}media--reverse.#{$css-prefix}media--small .#{$css-prefix}media__figure { // @TODO - Ugly
+.#{$css-prefix}media--small .#{$css-prefix}media__figure--reverse {
   margin-left: $spacing-xx-small;
+}
+
+.#{$css-prefix}media--reverse {
+
+   @include deprecate("0.20.0") {
+
+    > .#{$css-prefix}media__figure {
+      order: 1;
+    }
+
+    &.#{$css-prefix}media--small .#{$css-prefix}media__figure {
+      margin-left: $spacing-xx-small;
+    }
+  }
 }
