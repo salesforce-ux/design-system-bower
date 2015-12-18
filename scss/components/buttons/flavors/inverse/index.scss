@@ -1,3 +1,4 @@
+/* Lightning Design System 0.12.1 */
 /*
 Copyright (c) 2015, salesforce.com, inc. All rights reserved.
 
@@ -14,9 +15,21 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   @include button-base;
   background-color: $color-background-button-inverse;
 
+  &[disabled] {
+    background-color: $color-background-button-inverse-disabled;
+    border-color: $color-border-button-inverse-disabled;
+    color: $color-text-button-inverse-disabled;
+  }
+}
+
+.#{$css-prefix}button--inverse,
+.#{$css-prefix}button-group .#{$css-prefix}button--icon-inverse {
+
   &,
   &:link,
-  &:visited { color: $color-text-button-inverse; }
+  &:visited { 
+    color: $color-text-button-inverse; 
+  }
 
   &:hover,
   &:focus,
@@ -26,12 +39,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
   &:focus {
     @include focus-inverse;
-  }
-
-  &[disabled] {
-    background-color: $color-background-button-inverse-disabled;
-    border-color: $color-border-button-inverse-disabled;
-    color: $color-text-button-inverse-disabled;
   }
 }
 

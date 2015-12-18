@@ -1,5 +1,5 @@
 # Lightning Design System 
-# Version: 0.12.0 
+# Version: 0.12.1 
 
 Welcome to the [Salesforce Lightning Design System](https://www.lightningdesignsystem.com) brought to you by [Salesforce UX](https://twitter.com/salesforceux).
 
@@ -26,4 +26,3 @@ Welcome to the [Salesforce Lightning Design System](https://www.lightningdesigns
 * swatches/
   - slds.ase
   - slds.clr - adobe and ios swatch formats, respectively. See [https://helpx.adobe.com/photoshop/using/customizing-color-pickers-swatches.html](https://helpx.adobe.com/photoshop/using/customizing-color-pickers-swatches.html)
-

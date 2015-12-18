@@ -1,3 +1,4 @@
+/* Lightning Design System 0.12.1 */
 // Copyright (c) 2015, salesforce.com, inc. All rights reserved.
 
 // Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -64,5 +65,22 @@
 
   &--inverse-text {
     @include inverse-links;
+  }
+
+  &--default,
+  &--shade,
+  &--inverse,
+  &--alt-inverse,
+  &--success,
+  &--info,
+  &--warning,
+  &--error,
+  &--offline,
+  &--alert-texture,
+  &--inverse-text {
+    
+    .#{$css-prefix}text-body--small {
+      color: inherit;
+    }
   }
 }

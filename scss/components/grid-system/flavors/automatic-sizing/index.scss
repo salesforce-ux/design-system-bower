@@ -1,3 +1,4 @@
+/* Lightning Design System 0.12.1 */
 // Copyright (c) 2015, salesforce.com, inc. All rights reserved.
 
 // Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -49,19 +50,19 @@
 .#{$css-prefix}col--padded {
   padding: {
     right: $spacing-small;
-     left: $spacing-small;
+    left: $spacing-small;
   }
 }
 .#{$css-prefix}col--padded-medium {
   padding: {
     right: $spacing-medium;
-     left: $spacing-medium;
+    left: $spacing-medium;
   }
 }
 .#{$css-prefix}col--padded-large {
   padding: {
     right: $spacing-large;
-     left: $spacing-large;
+    left: $spacing-large;
   }
 }
 
@@ -69,7 +70,7 @@
 .#{$css-prefix}col--padded > .#{$css-prefix}grid {
   margin: {
     right: ($spacing-small * -1);
-     left: ($spacing-small * -1);
+    left: ($spacing-small * -1);
   }
 }
 
@@ -77,7 +78,7 @@
 .#{$css-prefix}col--padded-medium > .#{$css-prefix}grid {
   margin: {
     right: ($spacing-medium * -1);
-     left: ($spacing-medium * -1);
+    left: ($spacing-medium * -1);
   }
 }
 
@@ -85,7 +86,7 @@
 .#{$css-prefix}col--padded-large > .#{$css-prefix}grid {
   margin: {
     right: ($spacing-large * -1);
-     left: ($spacing-large * -1);
+    left: ($spacing-large * -1);
   }
 }
 
